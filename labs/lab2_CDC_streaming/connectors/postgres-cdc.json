@@ -1,0 +1,18 @@
+
+{
+  "name": "cdc-ecommerce",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "database.hostname": "postgres",
+    "database.port": "5432",
+    "database.user": "admin",
+    "database.password": "admin",
+    "database.dbname": "shop",
+    "topic.prefix": "ecommerce",
+    "plugin.name": "pgoutput",
+    "schema.include.list": "public",
+    "table.include.list": "public.users,public.orders",
+    "tombstones.on.delete": "false",
+    "slot.name": "debezium_slot_ecommerce"
+  }
+}
